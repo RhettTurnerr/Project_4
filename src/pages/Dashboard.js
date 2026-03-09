@@ -38,9 +38,18 @@ function Dashboard() {
   }, [selectedCategory]);
   return (
     <div className="dashboard-container">
+      <div className="header">
+        <h2>Instrumental Questionare</h2>
+        <p>
+          Username: <strong>{email}</strong>
+        </p>
+        <button className="logout-button" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
       {/* LEFT SIDE: Categories */}
       <div className="categories-panel">
-        <h3>Categories</h3>
+        <h3 className="cat-header">Categories</h3>
         <ul className="category-item-container">
           {categories.map((cat) => (
             <li
@@ -56,31 +65,25 @@ function Dashboard() {
 
       {/* RIGHT SIDE: Questions */}
       <div className="questions-panel">
-        <div className="header">
-          <h2>Instrumental Questionare</h2>
-          <p>
-            Username: <strong>{email}</strong>
-          </p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-
         <hr />
 
         {!selectedCategory && <p>Select a Category to view its questions</p>}
-        {selectedCategory && questions.length === 0 &&<p>No questions for this category</p>}
+        {selectedCategory && questions.length === 0 && (
+          <p>No questions for this category</p>
+        )}
 
         {selectedCategory && (
           <div>
             <h3>Questions</h3>
             <ul>
               {questions
-                .filter(q=> q.category_id === selectedCategory)
+                .filter((q) => q.category_id === selectedCategory)
                 .map((q) => (
-                <li key={q.id}>
-                  <p>Q: {q.question_text}</p>
-                  <p>A: {q.answer_text}</p>
-                </li>
-              ))}
+                  <li key={q.id}>
+                    <p>Q: {q.question_text}</p>
+                    <p>A: {q.answer_text}</p>
+                  </li>
+                ))}
             </ul>
           </div>
         )}

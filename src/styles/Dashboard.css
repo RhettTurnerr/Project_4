@@ -1,39 +1,83 @@
-*{
-    background-color:rgb(231, 200, 178);
+* {
+  background-color: rgb(231, 200, 178);
 }
 
-.dashboard-container{
-    display: flex;
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.categories-panel{
-    width: 250px;
-    border-right: 1px solid black;
-    overflow-y: auto;
-    padding: 10px;
+.header {
+  width: 100%;
+  text-align: center;
 }
 
-.questions-panel{
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
+.categories-panel {
+  width: 250px;
+  border-right: 1px solid black;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: rgb(230, 189, 160);
 }
 
-.category-item-container{
-    padding: 0;
+.questions-panel {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: rgb(230, 189, 160);
 }
 
-.category-item{
-    list-style: none;
-    border: 1px solid black;
-    padding: 2px;
-    margin: 4px;
-    text-align: center;
-    background-color: rgba(255, 162, 0, 0.508);
-    box-shadow: 1px 1px;
-    cursor: pointer;
+.questions-panel *{
+  background-color: rgb(230, 189, 160);
 }
 
-.category-item:active{
-    box-shadow: inset 1px 1px;
+.category-item-container {
+  padding: 0;
+  background-color: rgb(230, 189, 160);
+}
+
+.cat-header {
+  background-color: rgb(230, 189, 160);
+}
+
+.category-item {
+  list-style: none;
+  border: 1px solid black;
+  padding: 2px;
+  margin: 6px;
+  text-align: center;
+  background-color: rgba(255, 162, 0, 0.508);
+  box-shadow: 1px 1px;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.category-item:active {
+  box-shadow: inset 1px 1px;
+  transform: translateY(2px);
+}
+
+.category-item:hover {
+  transform: translateY(-1px);
+}
+
+.logout-button {
+  background-color: rgba(255, 60, 0, 0.508);
+  box-shadow: 1px 1px;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.logout-button:active {
+  box-shadow: inset 1px 1px;
+  transform: translateY(2px);
+}
+
+.logout-button:hover {
+  transform: translateY(-1px);
 }
