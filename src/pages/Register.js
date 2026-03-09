@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../styles/Register.css";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ function Register() {
         <button type="submit">Register</button>
       </form>
 
-      {message && <p>{message}</p>}
+      {message && <p className="error-message">{message}</p>}
 
     </div>
   );
