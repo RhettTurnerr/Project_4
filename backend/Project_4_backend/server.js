@@ -21,9 +21,8 @@ app.get('/',(req,res)=>{
     res.send('Backend running now');
 });
 
-app.listen(5000, ()=>{
-    console.log("server is running (port 5000)");
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.get('/test-db', async(req,res)=>{
     const [rows] = await database.query('select * from categories');
