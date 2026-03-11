@@ -4,7 +4,7 @@ import api from "../api";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
