@@ -1,7 +1,7 @@
 # Name: Rhett Turner
 
 ## Description:
-
+This website has register and loging features that get data from a database in order to confirm those credentials. After logging in the user can then select things from various categories to see frequently asked questions and answers. The website pulls data from a database for this as well.
 
 ## Technologies:
 * HTML
@@ -22,6 +22,11 @@
 * Vercel
 
 ## Database Creation Script
+
+create database webapp;
+
+use webapp;
+
 create table users(
 	id int auto_increment primary key,
     email varchar(100) not null unique,
@@ -47,3 +52,17 @@ create table questions(
     foreign key (category_id) references categories(id)
 		on delete cascade
 );
+
+## Database Test Data
+
+insert into categories (name, description)
+values
+('Drums', 'common questions about drums'),
+('Guitar', 'common questions about guitars'),
+('Bass', 'common questions about bass');
+
+insert into questions (category_id, question_text, answer_text)
+values
+(1, 'What drum set is recommended for beginners?', 'drum set 1'),
+(2, 'Are acoustic or electric guitars recommended for beginners?', 'depend on preference'),
+(3, 'What are some good pedals to use with an electric base', 'bass pedal 1');
