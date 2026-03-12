@@ -11,7 +11,7 @@ function Register() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/auth/register", {
+      .post("https://project-4-cqge.onrender.com/auth/register", {
         email,
         password
       })
