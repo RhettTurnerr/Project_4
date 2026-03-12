@@ -4,7 +4,7 @@ import api from "../api";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [setError] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ function Login() {
   return (
     <div className="login-container">
       <h2>Login</h2>
-
+      {error && <p style={{ color: "red", marginBottom: "10px" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
